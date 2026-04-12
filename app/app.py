@@ -1,9 +1,18 @@
-from flask import Flask
+from flask import Flask, jsonify
+
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello Azure!"
+    return "API läuft!"
 
-if __name__ == "__main__": 
+@app.route("/api/users")
+def users():
+    data = [
+        {"id": 1, "name": "Andreas"},
+        {"id": 2, "name": "Max"}
+    ]
+    return jsonify(data)
+
+if __name__ == "__main__":
     app.run(debug=True)
