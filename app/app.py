@@ -13,6 +13,14 @@ def users():
         {"id": 2, "name": "Max"}
     ]
     return jsonify(data)
+    
+@app.route("/api/products")
+def products():
+    data = [
+        {"id": 1, "name": "Laptop"},
+        {"id": 2, "name": "Maus"}
+    ]
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
