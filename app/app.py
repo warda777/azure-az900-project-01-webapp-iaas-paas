@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "API läuft!"
+    return '<h1>API läuft!</h1><br><img src="https://az900storagewarda.blob.core.windows.net/uploads/Bildschirmfoto%202026-04-03%20um%2013.30.22.png?sp=r&st=2026-04-14T06:23:36Z&se=2026-04-14T14:38:36Z&spr=https&sv=2025-11-05&sr=b&sig=FTB9t%2FtnDcLV9XFhMZ6OetQso4gWfVSjc9Yst66egvI%3D" width="300">'
 
 @app.route("/api/users")
 def users():
