@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from app.db import get_users
 
 app = Flask(__name__)
 
@@ -8,11 +9,7 @@ def home():
 
 @app.route("/api/users")
 def users():
-    data = [
-        {"id": 1, "name": "Andreas"},
-        {"id": 2, "name": "Max"}
-    ]
-    return jsonify(data)
+    return jsonify(get_users())
 
 @app.route("/api/products")
 def products():
@@ -23,4 +20,4 @@ def products():
     return jsonify(data)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0", port=5001, debug=True)
